@@ -488,30 +488,61 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* ————— LEAD CTA (bright gradient stage) ————— */}
+      {/* ————— LEAD + PRODUCTS PROMO ————— */}
       <section className="mx-auto max-w-shell px-4 py-16 sm:px-6">
-        <div className="reveal grid overflow-hidden rounded-[2rem] border border-cardline bg-gradient-to-br from-palesky via-tint to-palesky shadow-soft lg:grid-cols-2">
-          <div className="p-7 sm:p-12">
-            <p className="inline-flex items-center gap-2 rounded-full bg-deep px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-skyvivid">
-              <Sparkles size={13} /> One conversation
-            </p>
-            <h2 className="font-display mt-4 text-balance text-3xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-[2.75rem]">
-              Your next move starts with one conversation.
-            </h2>
-            <p className="mt-4 max-w-md text-[15px] leading-relaxed text-moss">
-              Tell us what you are looking for, and our team can help you explore the
-              available options — no pressure, no false promises.
-            </p>
-            <ul className="mt-6 space-y-2.5 text-[13.5px] font-medium text-ink">
-              {["Replies during working hours", "Variant & quotation help", "Charging feasibility check"].map((t) => (
-                <li key={t} className="flex items-center gap-2.5">
-                  <span className="grid h-6 w-6 place-items-center rounded-full bg-deep text-[11px] font-black text-skyvivid">✓</span> {t}
-                </li>
-              ))}
-            </ul>
+        <div className="reveal grid overflow-hidden rounded-[2rem] border border-cardline bg-white shadow-soft lg:grid-cols-2">
+          <div className="relative min-h-[420px] overflow-hidden lg:min-h-full">
+            <SafeImage
+              src="https://images.unsplash.com/photo-1593941707882-a5bba14938c7?auto=format&fit=crop&w=1400&q=80"
+              alt="Electric vehicle charging at home"
+              className="absolute inset-0 h-full w-full object-cover"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-navy via-navy/55 to-navy/10" aria-hidden />
+            <div className="relative flex h-full flex-col justify-end p-7 sm:p-10">
+              <p className="inline-flex w-fit items-center gap-2 rounded-full bg-skyvivid px-3.5 py-1.5 text-[11px] font-extrabold uppercase tracking-[0.18em] text-navy">
+                <Sparkles size={13} /> Beyond the car
+              </p>
+              <h2 className="font-display mt-4 max-w-md text-balance text-3xl font-semibold leading-[1.05] tracking-tight text-white sm:text-[2.5rem]">
+                Power up every journey.
+              </h2>
+              <p className="mt-3 max-w-md text-[14.5px] leading-relaxed text-white/75">
+                Home chargers, portable top-up kits, adapters and care essentials —
+                matched to your EV, with availability and quotation help from our team.
+              </p>
+              <ul className="mt-5 space-y-2 text-[13.5px] font-semibold text-white">
+                {["Home & portable chargers", "Connectors that fit your car", "No checkout — just honest quotes"].map((t) => (
+                  <li key={t} className="flex items-center gap-2.5">
+                    <span className="grid h-6 w-6 shrink-0 place-items-center rounded-full bg-skyvivid text-[11px] font-black text-navy">✓</span> {t}
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-6 flex flex-wrap gap-2">
+                <Link
+                  href="/products"
+                  className="btn-press inline-flex items-center gap-2 rounded-full bg-skyvivid px-6 py-3 text-[14px] font-extrabold text-navy transition hover:bg-white"
+                >
+                  Explore chargers & accessories <ArrowRight size={16} />
+                </Link>
+                <Link
+                  href="/inquire"
+                  className="btn-press rounded-full border border-white/35 bg-white/10 px-6 py-3 text-[14px] font-bold text-white backdrop-blur transition hover:bg-white/20"
+                >
+                  Talk to us
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="bg-white/60 p-4 backdrop-blur sm:p-8">
-            <LeadForm compact />
+          <div className="bg-tint p-4 sm:p-8">
+            <p className="text-[11px] font-extrabold uppercase tracking-[0.18em] text-brand">One conversation</p>
+            <h2 className="font-display mt-2 text-balance text-2xl font-semibold leading-tight tracking-tight text-ink sm:text-[1.7rem]">
+              Your next move starts here.
+            </h2>
+            <p className="mt-2 text-[13.5px] leading-relaxed text-moss">
+              Tell us what you are looking for — no pressure, no false promises.
+            </p>
+            <div className="mt-4">
+              <LeadForm compact />
+            </div>
           </div>
         </div>
       </section>

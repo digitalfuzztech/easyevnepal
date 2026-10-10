@@ -31,7 +31,7 @@ const config: Config = {
         moss: "#607487",
         muted: "#7A8CA0",
         line: "#DCE8F2",
-        cardline: "#E4EEF6",
+        cardline: "#C7E3F7",
         strongline: "#B8D5EA",
       },
       fontFamily: {
